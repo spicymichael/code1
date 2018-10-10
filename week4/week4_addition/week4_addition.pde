@@ -17,6 +17,7 @@ void draw(){
   fill(#FF0033);
   text(sum1, width/2, height*.33);
   text(sum2, width/2, height*.67);
+  trap(800, 800);
 }
 
 void mousePressed(){
@@ -26,4 +27,8 @@ void mousePressed(){
 
 int sum (int x, int y){
   return x + y;
+}
+
+void trap (float x, float y){
+  rect(x, y, 50, 50);
 }
