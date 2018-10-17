@@ -60,5 +60,5 @@ void draw(){
 void mousePressed(){
   for (int i = 0; i < ammt; i++){
     alpha[i] = 255;
-  }
+    }
 }
