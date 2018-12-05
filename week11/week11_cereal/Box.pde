@@ -1,12 +1,12 @@
 class Box{
   float x, y;
-  PVector pos, grav;
+  //PVector pos, grav;
   
   Box(float _x, float _y){
     x = _x;
     y = _y;
-    pos = new PVector(-75, 290);
-    grav = new PVector(random(-1.5,.5), random(1,5));
+    //pos = new PVector(-75, 290);
+    //grav = new PVector(random(-1.5,.5), random(1,5));
   }
   
   void place(){
@@ -36,11 +36,11 @@ class Box{
     popMatrix();
   }
   
-  void cereal(){
-    pushMatrix();
-      translate(mouseX, mouseY); 
-      ellipse(pos.x, pos.y, 10, 10);
-      pos.add(grav);
-    popMatrix();
-  }
+  //void cereal(){
+  //  pushMatrix();
+  //    translate(mouseX, mouseY); 
+  //    ellipse(pos.x, pos.y, 10, 10);
+  //    pos.add(grav);
+  //  popMatrix();
+  //}
 }
