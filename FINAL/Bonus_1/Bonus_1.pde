@@ -50,6 +50,7 @@ void draw(){
        
     if(b.posX >= p1.pos.x -10 && b.posY >= p1.pos.y -125
     && b.posY <= p1.pos.y + 125){
+      b.posX = p1.pos.x -10;
       b.bounceP();
       score++;
     }
