@@ -37,5 +37,7 @@ void draw(){
 }
 
 void mousePressed(){
+  if(system.size() > 0){
   system.remove(0);
+  }
 }
