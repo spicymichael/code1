@@ -34,7 +34,7 @@ PImage mag, cyan, yellow;
 int m = 2;
 PFont eaves;
 
-Fur pet[][] = new Fur[nn+1][nn+1];
+Fur pet[][] = new Fur[nn+2][nn+2];
 ArrayList<Bug> fleas;
   
 void setup(){
@@ -83,10 +83,10 @@ void draw(){
           noStroke();
           rect(i*s, j*s, width/nn, height/nn); 
         }
-      }for (int i = 0; i < nn+1; i ++){  
-        for (int j = 0; j < nn+1; j ++){
+      }for (int i = 0; i < nn+2; i ++){  
+        for (int j = 0; j < nn+2; j ++){
           c = lerpColor(a,b,.1*(i+j)/2);
-          pet[i][j] = new Fur(i*s, j*s, (i+j/2), c);
+          pet[i][j] = new Fur(i*s-40, j*s-40, (i+j/2), c);
           if(mousePressed){
             noStroke();
             fill(255, 2);

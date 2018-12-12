@@ -7,7 +7,7 @@ class Bug{
   }
   
   void place(){
-    fill(0);
+    strokeWeight(5);
     ellipse(x, y, 15, 15);
     line(x+15, y, x-15, y);
     line(x, y+15, x, y-15);
