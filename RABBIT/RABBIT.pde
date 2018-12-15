@@ -31,10 +31,10 @@ boolean start = false;
 int mode;
 
 PImage mag, cyan, yellow;
-int m = 2;
 PFont eaves;
 
-Fur pet[][] = new Fur[nn+2][nn+2];
+int m = 12;
+Fur pet[][] = new Fur[m][m];
 ArrayList<Bug> fleas;
   
 void setup(){
@@ -83,8 +83,8 @@ void draw(){
           noStroke();
           rect(i*s, j*s, width/nn, height/nn); 
         }
-      }for (int i = 0; i < nn+2; i ++){  
-        for (int j = 0; j < nn+2; j ++){
+      }for (int i = 0; i < m; i ++){  
+        for (int j = 0; j < m; j ++){
           c = lerpColor(a,b,.1*(i+j)/2);
           pet[i][j] = new Fur(i*s-40, j*s-40, (i+j/2), c);
           if(mousePressed){
@@ -102,6 +102,7 @@ void draw(){
               text("press x for a surprise", width/2,  height-150);
               text("press r to restart", width/2,  height-100);
             }else{
+              fill(a);
               textSize(72);
               text("Oh no! Fleas!", width/2, height/2);
               textSize(24);
@@ -112,6 +113,8 @@ void draw(){
       }
       
       for (int i = 0; i < fleas.size(); i ++){
+        fill(b);
+        stroke(b);
         Bug p = fleas.get(i);
         p.place();
         p.move();
@@ -133,11 +136,8 @@ void draw(){
     }
   }else{  
     f = (f+1) % n;
-    int o = 0;
-      for (int i = 0; i < n; i++){ 
-        image(gif[(f+o) % n], 40, 100);
-        o += 1;
-      }  
+    image(gif[f], 40, 100); 
+    
     textSize(72);
     fill(255, 0, 255);
     text("RABBIT", width/2,  height/3); 
@@ -178,5 +178,8 @@ void keyPressed(){
   if(key == 'r'){
     enter = false;
     start = false;
+    for(int i  = fleas.size(); i > 0; i--){
+    fleas.remove(i-1);
+    }
   }
 }
